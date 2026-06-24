@@ -2244,26 +2244,6 @@ img, a, button {
 }
 
 </style>
-
-<style>
-.prezen2-next-syokai{
-  position:fixed;
-  right:24px;
-  bottom:22px;
-  z-index:99999;
-  border:none;
-  border-radius:999px;
-  background:#1aa085;
-  color:#fff;
-  padding:13px 22px;
-  font-weight:950;
-  font-size:15px;
-  box-shadow:0 10px 26px rgba(0,0,0,.28);
-  display:none;
-}
-.prezen2-next-syokai.show{display:block}
-</style>
-
 </head>
 <body>
 <div class="flash" id="flash"></div>
@@ -2514,7 +2494,7 @@ img, a, button {
 <section class="slide" id="finalSlide">
   <div class="card final-card" id="finalHpCard" role="link" tabindex="0" aria-label="奈良文化高校公式HPを開く">
     <img src="https://sumida-passion.github.io/game-assets/images/hpmain.jpg" alt="奈良文化高校">
-    <a id="hpLink" class="final-link" href="#" onclick="parent.postMessage({type:'prezen2-goto-syokai'}, '*'); return false;" target="_blank" rel="noopener">奈良文化高校 公式HPへ →</a>
+    <a id="hpLink" class="final-link" href="syokai2.html" target="_blank" rel="noopener">奈良文化高校 公式HPへ →</a>
   </div>
 </section>
 <script>
@@ -2647,7 +2627,7 @@ if(hpLink){
   const goHp=e=>{
     e.preventDefault();
     e.stopPropagation();
-    window.location.href="#" onclick="parent.postMessage({type:'prezen2-goto-syokai'}, '*'); return false;";
+    window.location.href="syokai2.html";
   };
   hpLink.addEventListener("click",goHp);
   hpLink.addEventListener("touchend",goHp,{passive:false});
@@ -2753,29 +2733,5 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-<button class="prezen2-next-syokai" id="prezen2NextSyokai">学校紹介へ</button>
-
-<script>
-(function(){
-  const btn=document.getElementById('prezen2NextSyokai');
-  function updateBridge(){
-    const slides=Array.from(document.querySelectorAll('.slide'));
-    if(!btn || slides.length===0) return;
-    const i=slides.findIndex(s=>s.classList.contains('active'));
-    btn.classList.toggle('show', i >= slides.length-1);
-  }
-  if(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      parent.postMessage({type:'prezen2-goto-syokai'}, '*');
-    });
-  }
-  document.addEventListener('click', function(){ setTimeout(updateBridge,80); }, true);
-  document.addEventListener('keydown', function(){ setTimeout(updateBridge,80); }, true);
-  setInterval(updateBridge,500);
-  window.addEventListener('load', updateBridge);
-})();
-</script>
-
 </body>
 </html>
