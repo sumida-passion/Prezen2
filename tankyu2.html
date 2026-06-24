@@ -2642,7 +2642,7 @@ if(hpLink){
     e.preventDefault();
     e.stopPropagation();
     if(e.stopImmediatePropagation) e.stopImmediatePropagation();
-    window.location.assign("https://sumida-passion.github.io/syokai/");
+    window.location.assign("syokai2.html");
     return false;
   };
   hp.addEventListener("click", openHp, true);
@@ -2654,7 +2654,7 @@ if(hpLink){
 
 // FINAL HP LINK FIX: 最後のカード・ボタンは必ず公式HPを開く
 (function(){
-  const url="https://sumida-passion.github.io/syokai/";
+  const url="syokai2.html";
   const hp=document.getElementById("hpLink");
   const card=document.getElementById("finalHpCard");
   function openHp(e){
@@ -2733,5 +2733,46 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+<script>
+/* Prezen2 Tankyu2 start-button hard fix */
+(function(){
+  function bindStartButton(){
+    const btn = document.querySelector('.title-start');
+    if(!btn) return;
+
+    function fire(e){
+      if(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if(e.stopImmediatePropagation) e.stopImmediatePropagation();
+      }
+      if(typeof nextSlide === 'function'){
+        nextSlide();
+      }else{
+        const slides = document.querySelectorAll('.slide');
+        if(slides.length > 1){
+          slides[0].classList.remove('active');
+          slides[1].classList.add('active');
+        }
+      }
+      return false;
+    }
+
+    btn.onclick = fire;
+    btn.addEventListener('click', fire, true);
+    btn.addEventListener('pointerup', fire, true);
+    btn.addEventListener('touchend', fire, {capture:true, passive:false});
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bindStartButton);
+  }else{
+    bindStartButton();
+  }
+  window.addEventListener('load', bindStartButton);
+})();
+</script>
+
 </body>
 </html>
