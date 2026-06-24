@@ -15,54 +15,42 @@
 <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
 <title>Narabunka High School</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07101f;font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation;overscroll-behavior:none}.app{position:fixed;inset:0;overflow:hidden;background:#07101f}.part{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#07101f;transition:opacity .85s ease,filter .85s ease,transform .85s ease}#tankyuFrame{z-index:2;opacity:0;filter:blur(12px);transform:scale(1.015)}#syokaiFrame{z-index:1;opacity:0;filter:blur(12px);transform:scale(1.015);pointer-events:none;background:#fff}.app.tankyu #tankyuFrame{opacity:1;filter:blur(0);transform:scale(1);pointer-events:auto}.app.syokai #tankyuFrame{opacity:0;filter:blur(14px);transform:scale(.985);pointer-events:none}.app.syokai #syokaiFrame{z-index:3;opacity:1;filter:blur(0);transform:scale(1);pointer-events:auto}.start-menu{position:absolute;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(7,16,31,.78),rgba(7,16,31,.48)),url("./hpmain.jpg") center/cover no-repeat,#07101f;transition:opacity .55s ease,filter .55s ease}.start-menu::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 16%,rgba(247,201,109,.28),transparent 28%),linear-gradient(90deg,rgba(7,16,31,.78),rgba(7,16,31,.24) 55%,rgba(7,16,31,.72));pointer-events:none}.start-menu.hide{opacity:0;filter:blur(12px);pointer-events:none}.start-card{position:relative;width:min(1100px,86vw);border-radius:36px;padding:60px 64px;background:linear-gradient(135deg,rgba(255,248,234,.94),rgba(243,234,216,.84));box-shadow:0 32px 100px rgba(0,0,0,.52),inset 0 0 0 1px rgba(255,255,255,.7);color:#102033;backdrop-filter:blur(4px)}.kicker{color:#b9802e;font-weight:950;letter-spacing:.18em;margin-bottom:22px;font-size:clamp(1rem,1.8vw,1.35rem)}.title{font-size:clamp(3.8rem,7.2vw,7rem);line-height:1;font-weight:950;letter-spacing:.02em;color:#08336f;text-shadow:0 5px 18px rgba(255,255,255,.45)}.subtitle{font-size:clamp(1.25rem,2.2vw,2rem);font-weight:900;margin-top:20px;color:#334155}.menu-buttons{display:flex;gap:22px;margin-top:46px}.menu-buttons button{flex:1;border:0;border-radius:999px;padding:20px 26px;font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:950;cursor:pointer;box-shadow:0 12px 26px rgba(0,0,0,.18);touch-action:manipulation}.primary{background:#f7c96d;color:#07101f}.secondary{background:#e9eef5;color:#08336f}.transition{position:absolute;inset:0;z-index:9000;pointer-events:none;background:#fff;opacity:0}.transition.on{animation:whiteFade 1.18s ease both}@keyframes whiteFade{0%{opacity:0}45%{opacity:1}100%{opacity:0}}.corner-nav{position:absolute;left:12px;bottom:10px;z-index:8000;display:flex;gap:8px;opacity:.16;transition:.25s ease}.corner-nav:hover{opacity:1}.corner-nav button{border:0;border-radius:999px;background:rgba(8,51,111,.88);color:#fff;padding:9px 14px;font-weight:950;touch-action:manipulation}.loading{position:absolute;right:18px;top:14px;z-index:10000;color:rgba(255,255,255,.7);font-weight:900;font-size:12px;display:none}.loading.show{display:block}.error{position:absolute;inset:auto 24px 24px auto;z-index:10001;max-width:520px;border-radius:18px;padding:16px 18px;background:rgba(255,248,234,.94);color:#111827;font-weight:800;box-shadow:0 18px 46px rgba(0,0,0,.35);display:none}.error.show{display:block}@media(max-width:760px){.start-card{padding:36px 30px}.menu-buttons{flex-direction:column}.title{font-size:3.2rem}}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:"Yu Gothic","Hiragino Sans","Noto Sans JP",sans-serif;background:#07101f;color:#fff;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation;overscroll-behavior:none}.home{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(7,16,31,.78),rgba(7,16,31,.36)),url("./hpmain.jpg") center/cover no-repeat,#07101f}.home::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 16%,rgba(247,201,109,.30),transparent 30%),linear-gradient(90deg,rgba(7,16,31,.84),rgba(7,16,31,.28) 56%,rgba(7,16,31,.78));pointer-events:none}.card{position:relative;width:min(1120px,86vw);border-radius:38px;padding:62px 66px;background:linear-gradient(135deg,rgba(255,248,234,.94),rgba(243,234,216,.84));box-shadow:0 34px 110px rgba(0,0,0,.56),inset 0 0 0 1px rgba(255,255,255,.72);backdrop-filter:blur(5px);color:#102033}.kicker{color:#b9802e;font-weight:950;letter-spacing:.18em;margin-bottom:22px;font-size:clamp(1rem,1.8vw,1.35rem)}.title{font-size:clamp(3.7rem,7.3vw,7.1rem);line-height:1.02;font-weight:950;letter-spacing:.02em;color:#08336f;text-shadow:0 5px 18px rgba(255,255,255,.45)}.subtitle{font-size:clamp(1.25rem,2.2vw,2rem);font-weight:900;margin-top:20px;color:#334155}.buttons{display:flex;gap:22px;margin-top:46px}.buttons a,.buttons button{flex:1;text-align:center;text-decoration:none;border:0;border-radius:999px;padding:20px 26px;font-size:clamp(1.05rem,1.8vw,1.35rem);font-weight:950;cursor:pointer;box-shadow:0 12px 26px rgba(0,0,0,.18);touch-action:manipulation}.primary{background:#f7c96d;color:#07101f}.secondary{background:#e9eef5;color:#08336f}.note{position:fixed;right:16px;bottom:12px;color:rgba(255,255,255,.58);font-size:12px;font-weight:800}.loading{position:fixed;left:16px;bottom:12px;color:rgba(255,255,255,.74);font-weight:900;font-size:12px}.warn{display:none;margin-top:22px;border-radius:18px;padding:14px 16px;background:rgba(255,255,255,.68);color:#7c2d12;font-weight:900;line-height:1.55}@media(max-width:760px){.card{padding:38px 30px}.buttons{flex-direction:column}.title{font-size:3.2rem}}
 </style>
 </head>
 <body>
-<div class="app" id="app">
-  <iframe id="tankyuFrame" class="part" title="Tankyu2"></iframe>
-  <iframe id="syokaiFrame" class="part" title="Syokai2"></iframe>
-  <div class="start-menu" id="startMenu">
-    <div class="start-card">
-      <div class="kicker">NARA BUNKA HIGH SCHOOL</div>
-      <div class="title">Narabunka<br>High School</div>
-      <div class="subtitle">探究説明から、学校紹介へ。</div>
-      <div class="menu-buttons">
-        <button class="primary" onclick="startTankyu()">探究説明から始める</button>
-        <button class="secondary" onclick="startSyokai(false)">学校紹介から始める</button>
-      </div>
+<main class="home">
+  <section class="card">
+    <div class="kicker">NARA BUNKA HIGH SCHOOL</div>
+    <div class="title">Narabunka<br>High School</div>
+    <div class="subtitle">探究説明から、学校紹介へ。</div>
+    <div class="buttons">
+      <a class="primary" id="goTankyu" href="./tankyu2.html?prezen2=1">探究説明から始める</a>
+      <a class="secondary" href="./syokai2.html">学校紹介から始める</a>
     </div>
-  </div>
-  <div class="loading" id="loading">loading...</div>
-  <div class="transition" id="transition"></div>
-  <div class="error" id="errorBox"></div>
-  <div class="corner-nav">
-    <button onclick="startTankyu(true)">探究へ</button>
-    <button onclick="startSyokai(true)">学校紹介へ</button>
-  </div>
-</div>
+    <div class="warn" id="warn">初回だけ接続準備をしています。数秒後にもう一度「探究説明から始める」を押してください。</div>
+  </section>
+</main>
+<div class="loading" id="status">接続準備中...</div>
+<div class="note">Prezen2 / no iframe</div>
 <script>
-const app=document.getElementById('app');const startMenu=document.getElementById('startMenu');const tankyuFrame=document.getElementById('tankyuFrame');const syokaiFrame=document.getElementById('syokaiFrame');const transition=document.getElementById('transition');const loading=document.getElementById('loading');const errorBox=document.getElementById('errorBox');
-const tankyuCandidates=['./tankyu2.html','./Tankyu2.html','./tankyu2_fixed_start.html','./Tankyu 2.html','./tankyu2/index.html'];
-const syokaiCandidates=['./syokai2.html','./Syokai2.html','./syokai/index.html','./syokai2/index.html','./Syoukai2.html'];
-let tankyuSrc='', syokaiSrc='', going=false;
-async function firstExisting(list){for(const src of list){try{const r=await fetch(src,{method:'HEAD',cache:'no-store'});if(r.ok)return src}catch(e){}}return list[0]}
-async function init(){loading.classList.add('show');tankyuSrc=await firstExisting(tankyuCandidates);syokaiSrc=await firstExisting(syokaiCandidates);tankyuFrame.src=tankyuSrc;syokaiFrame.src=syokaiSrc;loading.classList.remove('show');setTimeout(patchTankyu,700)}
-function showError(msg){errorBox.innerHTML=msg;errorBox.classList.add('show');setTimeout(()=>errorBox.classList.remove('show'),8500)}
-function flash(){transition.classList.remove('on');void transition.offsetWidth;transition.classList.add('on')}
-function startTankyu(fromNav=false){going=false;flash();startMenu.classList.add('hide');app.classList.remove('syokai');app.classList.add('tankyu');try{if(fromNav)tankyuFrame.contentWindow.location.href=tankyuSrc}catch(e){}setTimeout(patchTankyu,700)}
-function startSyokai(useFlash=true){if(going)return;going=true;if(useFlash)flash();startMenu.classList.add('hide');app.classList.remove('tankyu');app.classList.add('syokai');try{syokaiFrame.contentWindow.focus()}catch(e){}setTimeout(()=>going=false,1200)}
-function isLastTankyuSlide(doc){const slides=[...doc.querySelectorAll('.slide')];if(!slides.length)return false;const active=doc.querySelector('.slide.active')||slides.find(s=>getComputedStyle(s).display!=='none');return active===slides[slides.length-1]||active?.id==='finalSlide'}
-function patchTankyu(){try{const w=tankyuFrame.contentWindow;const d=tankyuFrame.contentDocument;if(!w||!d||d.__prezen2Patched)return;d.__prezen2Patched=true;
-  const style=d.createElement('style');style.textContent='a[href*="syokai2"],a[href*="Syokai2"]{cursor:pointer!important}';d.head.appendChild(style);
-  d.addEventListener('click',ev=>{const a=ev.target.closest&&ev.target.closest('a[href],#finalHpCard,.final-card');if(!a)return;const href=(a.getAttribute&&a.getAttribute('href'))||'';if(href.toLowerCase().includes('syokai2')||a.id==='finalHpCard'||a.classList?.contains('final-card')){ev.preventDefault();ev.stopPropagation();setTimeout(()=>startSyokai(true),80)}},true);
-  ['nextSlide','next','goNext','advance'].forEach(name=>{if(typeof w[name]==='function'&&!w[name].__prezen2){const old=w[name];w[name]=function(){const wasLast=isLastTankyuSlide(d);const ret=old.apply(this,arguments);setTimeout(()=>{if(wasLast||isLastTankyuSlide(d)&&d.querySelector('#finalSlide.active'))startSyokai(true)},120);return ret};w[name].__prezen2=true}});
-  d.addEventListener('keydown',ev=>{if((ev.key==='ArrowRight'||ev.key===' '||ev.key==='Enter')&&isLastTankyuSlide(d)){ev.preventDefault();startSyokai(true)}},true);
-  const mo=new MutationObserver(()=>{const active=d.querySelector('#finalSlide.active');if(active){active.addEventListener('click',e=>{e.preventDefault();startSyokai(true)},{once:true,capture:true})}});mo.observe(d.body,{subtree:true,attributes:true,attributeFilter:['class','style']});
-}catch(e){showError('Tankyu2.html と Syokai2.html を Prezen2 フォルダ直下に置くと、自動接続が有効になります。')}}
-tankyuFrame.addEventListener('load',()=>{setTimeout(patchTankyu,250);try{const u=tankyuFrame.contentWindow.location.href.toLowerCase();if(u.includes('syokai2'))startSyokai(true)}catch(e){}});
-window.addEventListener('message',e=>{if(String(e.data).toLowerCase().includes('syokai'))startSyokai(true)});
-init();
+(function(){
+  const status=document.getElementById('status');
+  const warn=document.getElementById('warn');
+  const go=document.getElementById('goTankyu');
+  function setReady(){ status.textContent='接続準備OK'; }
+  if(!('serviceWorker' in navigator)){ status.textContent='通常モード'; return; }
+  navigator.serviceWorker.register('./sw.js?v=20260624-noiframe',{scope:'./'}).then(function(reg){
+    if(reg.waiting) reg.waiting.postMessage({type:'SKIP_WAITING'});
+    return navigator.serviceWorker.ready;
+  }).then(function(){
+    if(navigator.serviceWorker.controller){ setReady(); }
+    else { status.textContent='接続準備を反映中...'; location.reload(); }
+  }).catch(function(){ status.textContent='通常モード'; });
+  go.addEventListener('click',function(e){
+    if('serviceWorker' in navigator && !navigator.serviceWorker.controller){ e.preventDefault(); warn.style.display='block'; setTimeout(()=>location.reload(),650); }
+  });
+})();
 </script>
 </body>
 </html>

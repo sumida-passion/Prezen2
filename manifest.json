@@ -1,10 +1,1 @@
-{
-  "name":"Narabunka High School",
-  "short_name":"Narabunka",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#07101f",
-  "theme_color":"#07101f",
-  "orientation":"landscape",
-  "icons":[{"src":"./icon-192.png","sizes":"192x192","type":"image/png"},{"src":"./icon-512.png","sizes":"512x512","type":"image/png"}]
-}
+{"name":"Narabunka High School","short_name":"Narabunka","start_url":"./","display":"standalone","background_color":"#07101f","theme_color":"#07101f","orientation":"landscape","icons":[{"src":"./icon-192.png","sizes":"192x192","type":"image/png"},{"src":"./icon-512.png","sizes":"512x512","type":"image/png"}]}
